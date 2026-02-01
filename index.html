@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SureBet Finder - Arbitragem Esportiva</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Rajdhani:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Background animado -->
+    <div class="bg-animated"></div>
+    
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="logo">
+                <span class="logo-icon">⚡</span>
+                <h1>SUREBET<span class="highlight">FINDER</span></h1>
+            </div>
+            <div class="header-stats">
+                <div class="stat-item">
+                    <span class="stat-label">Última atualização:</span>
+                    <span class="stat-value" id="lastUpdate">--:--:--</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-label">Surebets encontradas:</span>
+                    <span class="stat-value highlight" id="surebetCount">0</span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <div class="container">
+            <!-- Controles -->
+            <div class="controls">
+                <button class="btn btn-primary" id="refreshBtn">
+                    <span class="btn-icon">🔄</span> Atualizar Odds
+                </button>
+                <div class="filter-group">
+                    <label for="sportFilter">Esporte:</label>
+                    <select id="sportFilter" class="select-custom">
+                        <option value="all">Todos</option>
+                        <option value="soccer">Futebol</option>
+                        <option value="basketball">Basquete</option>
+                        <option value="tennis">Tênis</option>
+                    </select>
+                </div>
+                <div class="auto-refresh">
+                    <label class="switch">
+                        <input type="checkbox" id="autoRefresh" checked>
+                        <span class="slider"></span>
+                    </label>
+                    <span>Auto-refresh (30s)</span>
+                </div>
+            </div>
+
+            <!-- Loading State -->
+            <div class="loading-container" id="loadingState">
+                <div class="loading-spinner"></div>
+                <p>Carregando odds...</p>
+            </div>
+
+            <!-- Error State -->
+            <div class="error-container" id="errorState" style="display: none;">
+                <div class="error-icon">⚠️</div>
+                <p class="error-message" id="errorMessage"></p>
+                <button class="btn btn-secondary" onclick="loadOdds()">Tentar Novamente</button>
+            </div>
+
+            <!-- Odds Grid -->
+            <div class="odds-grid" id="oddsGrid">
+                <!-- Os cards de odds serão inseridos aqui via JavaScript -->
+            </div>
+
+            <!-- Empty State -->
+            <div class="empty-state" id="emptyState" style="display: none;">
+                <div class="empty-icon">📊</div>
+                <h3>Nenhuma odd disponível</h3>
+                <p>Aguarde a próxima atualização ou clique em "Atualizar Odds"</p>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>© 2026 SureBet Finder | Dados atualizados via APIs de odds em tempo real</p>
+            <p class="disclaimer">⚠️ Arbitragem esportiva envolve riscos. Use com responsabilidade.</p>
+        </div>
+    </footer>
+
+    <script src="js/app.js"></script>
+</body>
+</html>
