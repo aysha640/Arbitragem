@@ -40,7 +40,6 @@ header h1 {
     background: rgba(0, 0, 0, 0.3);
     padding: 15px;
     border-radius: 10px;
-    position: relative;
 }
 
 .total-geral p {
@@ -53,31 +52,6 @@ header h1 {
     font-size: 28px;
     color: #ff4081;
     text-shadow: 0 0 10px rgba(255, 64, 129, 0.5);
-}
-
-/* Botão Secreto */
-.btn-secreto {
-    position: absolute;
-    top: 15px;
-    right: 15px;
-    background: transparent;
-    border: none;
-    font-size: 24px;
-    cursor: pointer;
-    opacity: 0.6;
-    transition: all 0.3s ease;
-    padding: 5px;
-    filter: drop-shadow(0 0 3px rgba(255, 64, 129, 0.3));
-}
-
-.btn-secreto:active {
-    transform: scale(1.2);
-    opacity: 1;
-    filter: drop-shadow(0 0 8px rgba(255, 64, 129, 0.8));
-}
-
-.total-geral {
-    position: relative;
 }
 
 /* Botões Principais */
